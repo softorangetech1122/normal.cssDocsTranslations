@@ -1,0 +1,16 @@
+name: PR Closer
+
+on:
+  pull_request:
+    types: [opened, reopened]
+
+
+jobs:
+  close-pull-request:
+    runs-on: ubuntu-latest
+    name: Close Pull Request
+    steps:
+      - uses: codelytv/no-pull-requests@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          message: This repository has been **archived and locked**. No further contributions can be made. To contribute on the main repo, please go here: https://github.com/softorangetech200/normal.css.
